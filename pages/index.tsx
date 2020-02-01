@@ -1,3 +1,5 @@
-const Home = () => <h1>Hello world!</h1>;
+import React from 'react'
 
-export default Home;
+const Home: React.FC = () => <h1>Hello world!</h1>
+
+export default Home
