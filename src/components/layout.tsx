@@ -27,7 +27,9 @@ const Default: React.FC<{
       </ol>
     </nav>
     <main>{content}</main>
-    <footer>@mii288</footer>
+    <footer>
+      <a href="https://github.com/mii288/p5-playground">@mii288</a>
+    </footer>
     <style jsx>{`
       header h1 {
         padding: 0.5em 0;
@@ -133,7 +135,6 @@ const Default: React.FC<{
 
       footer {
         grid-area: footer;
-        font-size: 0.8rem;
         display: flex;
         justify-content: center;
         color: #aaa;
