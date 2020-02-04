@@ -38,8 +38,6 @@ const Default: React.FC<{
       }
 
       header a {
-        color: currentColor;
-        text-decoration: none;
         transition: color 0.2s;
       }
 
@@ -66,15 +64,25 @@ const Default: React.FC<{
         padding: 1rem;
         grid-gap: 1rem;
         grid-template-rows: auto 1fr auto;
-        grid-template-areas:
-          'header'
-          'sidebar'
-          'content';
         grid-template-columns: 250px auto;
         grid-template-areas:
           'header   header'
           'sidebar  content'
           'footer   footer';
+      }
+
+      @media screen and (max-width: 1000px) {
+        div {
+          grid-template-columns: none;
+          grid-template-areas:
+            'header'
+            'content'
+            'footer';
+        }
+
+        nav {
+          display: none;
+        }
       }
 
       header {
@@ -103,8 +111,6 @@ const Default: React.FC<{
         display: block;
         width: 100%;
         height: 100%;
-        color: currentColor;
-        text-decoration: none;
       }
 
       nav a:after {
@@ -153,6 +159,11 @@ const Default: React.FC<{
       * {
         padding: 0;
         margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: currentColor;
       }
     `}</style>
   </div>

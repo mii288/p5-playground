@@ -10,7 +10,7 @@ const P5: React.SFC<{ sketch: (...args: any[]) => any }> = props => {
     setP5(new P5Instance(props.sketch, wrapper.current || undefined))
   }, [props.sketch])
 
-  return <div ref={wrapper} />
+  return <div ref={wrapper} style={{ textAlign: 'center' }}/>
 }
 
 export default P5
