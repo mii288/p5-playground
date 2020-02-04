@@ -1,16 +1,15 @@
 import React from 'react'
-import Link from 'next/link'
+import { NextPage } from 'next'
+import LayoutDefault from '../components/layout'
 
-const Home: React.FC<{ pages: Array<{ title: string }> }> = ({ pages }) => (
-  <div>
-    <nav>
-      {pages.map(page => (
-        <Link key={page.title} href={`/post?title=${page.title}`}>
-          ${page.title}
-        </Link>
-      ))}
-    </nav>
-  </div>
+const Index: NextPage<{ posts: Array<{ title: string }> }> = ({ posts }) => (
+  <LayoutDefault posts={posts} content={<></>} />
 )
 
-export default Home
+Index.getInitialProps = () => {
+  return {
+    posts: [{ title: 'chp00_01_random_walker' }],
+  }
+}
+
+export default Index

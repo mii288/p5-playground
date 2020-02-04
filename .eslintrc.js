@@ -32,6 +32,9 @@ module.exports = {
     'prettier/prettier': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    '@typescript-eslint/member-delimiter-style': 'off',
+    '@typescript-eslint/unbound-method': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off'
   },
   overrides: [
     {
