@@ -16,15 +16,13 @@ const Default: React.FC<{
       </h1>
     </header>
     <nav>
-      <ol>
-        {posts.map(post => (
-          <li key={post.title}>
-            <Link href={`/post?title=${post.title}`}>
-              <a>{post.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ol>
+      {posts.map((post, index) => (
+        <Link key={post.title} href={`/post?title=${post.title}`}>
+          <a>
+            {index + 1}. {post.title}
+          </a>
+        </Link>
+      ))}
     </nav>
     <main>{content}</main>
     <footer>
@@ -71,20 +69,6 @@ const Default: React.FC<{
           'footer   footer';
       }
 
-      @media screen and (max-width: 1000px) {
-        div {
-          grid-template-columns: none;
-          grid-template-areas:
-            'header'
-            'content'
-            'footer';
-        }
-
-        nav {
-          display: none;
-        }
-      }
-
       header {
         grid-area: header;
       }
@@ -93,24 +77,13 @@ const Default: React.FC<{
         grid-area: sidebar;
       }
 
-      nav ol {
-        position: relative;
-        z-index: 0;
-        padding-left: 2em;
-      }
-
-      nav li {
-        position: relative;
-        z-index: 0;
-      }
-
       nav a {
         z-index: 0;
         padding: 0.75em 0.5em;
         position: relative;
         display: block;
         width: 100%;
-        height: 100%;
+        box-sizing: border-box;
       }
 
       nav a:after {
@@ -118,13 +91,13 @@ const Default: React.FC<{
         z-index: -2;
         display: block;
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.6);
         box-sizing: border-box;
         border: 3px solid #cc0066;
-        left: -2em;
+        left: 0;
         top: 0;
         height: 100%;
-        width: calc(100% + 1em);
+        width: 100%;
         opacity: 0;
         transform: scale(0);
         transition: all 0.2s;
@@ -145,6 +118,23 @@ const Default: React.FC<{
         justify-content: center;
         color: #aaa;
         padding-bottom: 2rem;
+      }
+
+      @media screen and (max-width: 1000px) {
+        div {
+          grid-template-columns: none;
+          grid-template-rows: auto auto 1fr auto;
+          grid-template-areas:
+            'header'
+            'sidebar'
+            'content'
+            'footer';
+        }
+
+        nav a {
+          display: inline-block;
+          width: auto;
+        }
       }
     `}</style>
     <style global jsx>{`
