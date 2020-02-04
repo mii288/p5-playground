@@ -17,19 +17,15 @@ export default (p: p5) => {
     }
 
     step() {
-      const choice = p.floor(p.random(4))
-      if (choice === 0) {
-        this.x++
-      } else if (choice === 1) {
-        this.x--
-      } else if (choice === 2) {
-        this.y++
-      } else {
-        this.y--
-      }
+      const stepX = p.random(-1, 1)
+      const stepY = p.random(-1, 1)
 
-      // this.x = p.constrain(this.x, 0, p.width - 1)
-      // this.y = p.constrain(this.y, 0, p.height - 1)
+      this.x += stepX
+      this.y += stepY
+
+      // refs: https://p5js.org/reference/#/p5/constrain
+      this.x = p.constrain(this.x, 0, p.width - 1)
+      this.y = p.constrain(this.y, 0, p.height - 1)
     }
   }
 
