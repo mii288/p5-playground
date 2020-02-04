@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{TTiU:function(e,t,n){"use strict";n.r(t);var c=n("q1tI"),u=n.n(c),r=n("I335"),s=n.n(r),a=u.a.createElement;t.default=function(e){var t=Object(c.useState)()[1],n=Object(c.useRef)(null);return Object(c.useEffect)((function(){t(new s.a(e.sketch,n.current||void 0))}),[e.sketch]),a("div",{ref:n})}}}]);
