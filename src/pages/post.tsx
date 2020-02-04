@@ -19,15 +19,7 @@ const Post: NextPage<{ name: string; posts: Array<{ title: string }> }> = ({
     const sketch = require(`../sketches/${name}`).default
 
     return (
-      <Layout
-        posts={posts}
-        content={
-          <section>
-            <h1>{name}</h1>
-            <P5 sketch={sketch} />
-          </section>
-        }
-      />
+      <Layout subtitle={name} posts={posts} content={<P5 sketch={sketch} />} />
     )
   } catch (error) {
     return <Error statusCode={404} />

@@ -6,7 +6,7 @@ export default (p: p5) => {
   }
 
   p.draw = () => {
-    p.background(240)
+    p.background(255)
     if (p.mouseX === 0 && p.mouseY === 0) return
     p.fill(255, 0, 0)
     p.noStroke()
