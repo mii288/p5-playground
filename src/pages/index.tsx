@@ -7,9 +7,12 @@ const Index: NextPage<{ posts: Array<{ title: string }> }> = ({ posts }) => (
 )
 
 Index.getInitialProps = () => {
-  return {
-    posts: [{ title: 'chp00_01_random_walker' }],
-  }
+  const posts = (({ keys }) =>
+    keys().map(path => ({ title: path.replace(/^.*?\/(.*?)\..*$/, '$1') })))(
+    require.context('../sketches', true, /\.ts$/)
+  )
+
+  return { posts }
 }
 
 export default Index
