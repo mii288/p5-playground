@@ -1,3 +1,3 @@
 module.exports = {
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/repository-name' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/p5-playground' : '',
 }
