@@ -7,18 +7,18 @@ export default (p: p5) => {
   }
 
   p.draw = () => {
-    const r = p.constrain(p.randomGaussian(0, 0) * 100 + 0, 0, 255)
-    const g = p.constrain(p.randomGaussian(0, 0) * 50 + 50, 0, 255)
-    const b = p.constrain(p.randomGaussian(0, 0) * 10 + 100, 0, 255)
+    const r = p.constrain(p.randomGaussian(0, 250), 0, 255)
+    const g = p.constrain(p.randomGaussian(50, 100), 0, 255)
+    const b = p.constrain(p.randomGaussian(200, 50), 0, 255)
     p.fill(r, g, b, 20)
     p.noStroke()
 
-    // sd: standard deviation = 標準偏差
-    const sd = p.width / 15
     // mean: 平均
     const mean = p.width / 2
-    const x = sd * p.randomGaussian(0, 0) + mean
-    const y = sd * p.randomGaussian(0, 0) + mean
+    // sd: standard deviation = 標準偏差
+    const sd = p.width / 15
+    const x = p.randomGaussian(mean, sd)
+    const y = p.randomGaussian(mean, sd)
 
     p.ellipse(x, y, 40, 40)
   }

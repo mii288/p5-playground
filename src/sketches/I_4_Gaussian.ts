@@ -9,9 +9,7 @@ export default (p: p5) => {
   p.draw = () => {
     const sd = 60
     const mean = p.width / 2
-    const num = p.randomGaussian(0, 0)
-
-    const x = sd * num + mean
+    const x = p.randomGaussian(mean, sd)
 
     p.noStroke()
     p.fill(255, 10)
