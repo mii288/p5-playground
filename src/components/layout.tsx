@@ -62,7 +62,7 @@ const Default: React.FC<{
         padding: 1rem;
         grid-gap: 1rem;
         grid-template-rows: auto 1fr auto;
-        grid-template-columns: 250px auto;
+        grid-template-columns: 300px auto;
         grid-template-areas:
           'header   header'
           'sidebar  content'
@@ -79,7 +79,7 @@ const Default: React.FC<{
 
       nav a {
         z-index: 0;
-        padding: 0.75em 0.5em;
+        padding: 0.5em 0.5em;
         position: relative;
         display: block;
         width: 100%;
