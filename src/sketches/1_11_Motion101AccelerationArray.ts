@@ -14,19 +14,10 @@ export default (p: p5) => {
       this.topSpeed = 10
     }
 
-    createRandom2DVector() {
-      const angle = p.random(p.TWO_PI)
-      return p.createVector(p.cos(angle), p.sin(angle))
-    }
-
     update() {
       const mouse = p.createVector(p.mouseX, p.mouseY)
-      const dir = Vector.sub(mouse, this.location)
-
-      dir.normalize()
-      dir.mult(0.5)
-
-      this.acceleration = dir
+      this.acceleration = p5.Vector.sub(mouse, this.location)
+      this.acceleration.setMag(0.2)
 
       this.velocity.add(this.acceleration)
       this.velocity.limit(this.topSpeed)
